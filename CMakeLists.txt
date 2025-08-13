@@ -29,7 +29,7 @@ install(
     LIBRARY DESTINATION lib
     RUNTIME DESTINATION bin
 )
-install(DIRECTORY include DESTINATION include)
+install(DIRECTORY include DESTINATION )
 install(
     EXPORT aLocasTargets
     FILE aLocasTargets.cmake

@@ -20,5 +20,43 @@ add_dependencies(aLocas alogech)
 
 target_include_directories(aLocas PRIVATE include)
 
+set_target_properties(aLocas PROPERTIES EXPORT_NAME aLocas)
+
+install(
+    TARGETS aLocas
+    EXPORT aLocasTargets
+    ARCHIVE DESTINATION lib
+    LIBRARY DESTINATION lib
+    RUNTIME DESTINATION bin
+)
+install(DIRECTORY include DESTINATION include)
+install(
+    EXPORT aLocasTargets
+    FILE aLocasTargets.cmake
+    NAMESPACE aLocas::
+    DESTINATION lib/cmake/aLocas
+)
+
+include(CMakePackageConfigHelpers)
+
+write_basic_package_version_file(
+    aLocasConfigVersion.cmake
+    VERSION ${PROJECT_VERSION}
+    COMPATIBILITY AnyNewerVersion
+)
+
+configure_file(aLocasConfig.cmake.in aLocasConfig.cmake @ONLY)
+
+install(
+    FILES "${CMAKE_CURRENT_BINARY_DIR}/aLocasConfig.cmake" "${CMAKE_CURRENT_BINARY_DIR}/aLocasConfigVersion.cmake"
+    DESTINATION lib/cmake/aLocas
+)
+install(
+    EXPORT aLocasTargets
+    FILE aLocasTargets.cmake
+    NAMESPACE aLocas::
+    DESTINATION lib/cmake/aLocas
+)
+
 enable_testing()
 add_subdirectory(test)

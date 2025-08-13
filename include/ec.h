@@ -1,5 +1,5 @@
-#ifndef _LJW_SEQLIB_EC_H_
-#define _LJW_SEQLIB_EC_H_
+#ifndef _LJW_ALOCAS_EC_H_
+#define _LJW_ALOCAS_EC_H_
 #define ALOCASFSAARGV 1
 #define ALOCASFSAMEM 2
 #define ALOCASFSAPMAX 3

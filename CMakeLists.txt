@@ -30,12 +30,6 @@ install(
     RUNTIME DESTINATION bin
 )
 install(DIRECTORY include DESTINATION .)
-install(
-    EXPORT aLocasTargets
-    FILE aLocasTargets.cmake
-    NAMESPACE aLocas::
-    DESTINATION lib/cmake/aLocas
-)
 
 include(CMakePackageConfigHelpers)
 

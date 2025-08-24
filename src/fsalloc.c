@@ -175,6 +175,8 @@ Error fsalloc_destroy(FsAllocator* allocator) {
     }
 
     memset(allocator, 0, sizeof(FsAllocator));
+
+    return ERROR(NULL, 0);
 }
 
 int fsalloc_psize() {

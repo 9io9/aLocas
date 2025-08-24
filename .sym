@@ -1,0 +1,10 @@
+
+fsalloc
+fsalloc_destroy
+fsalloc_init
+fsalloc_pmin
+fsalloc_psize
+fsfree
+
+
+
